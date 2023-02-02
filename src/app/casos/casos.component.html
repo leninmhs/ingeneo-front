@@ -1,0 +1,32 @@
+<app-header></app-header>
+
+<p>Casos</p>
+<div class="container">
+    <div class="card m-5 p-3">
+        <div class="card-body">
+            <table class="table table-bordered table-striped table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>N° Caso</th>
+                    <th>Descripción</th>
+                    <th>Fecha Creación</th>
+                    <th>Cliente</th>
+                    <th>Asesor</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let caso of listaCasos">
+                    <td>{{ caso.id }}</td>
+                    <td>{{ caso.numero_caso }}</td>
+                    <td>{{ caso.descripcion }}</td>
+                    <td>{{ caso.fecha_caso }}</td>
+                    <td>{{ caso.nombre_cliente }}, {{ caso.cedula_cliente }}</td>
+					<th>{{ caso.nombre_asesor }}</th>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
